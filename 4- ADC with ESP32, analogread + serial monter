@@ -1,0 +1,12 @@
+#define POT  26   // potentio meter connected to 33 gpio
+
+
+void setup() {
+  Serial.begin(9600); // initialize serial communication at 9600 bit per second
+}
+
+void loop() {
+
+  Serial.println(analogRead(POT)); // print the value of analog read;
+
+}
