@@ -1,0 +1,13 @@
+#define POT 26   // potentio meter is connected to 33 gpio
+#define LED 25  // LED is connected to 25 gpio
+
+void setup() {
+  ledcAttachPin(LED, 0);  // assign a led pin to a channel  // channel is 0
+  ledcSetup(0, 5000, 12); //  5kh Frequency PWM, 12 bir resolution 
+  
+}
+
+void loop() {
+  ledcWrite(0, analogRead(POT)); //    led write according to analog value of Potentio meter
+
+}
