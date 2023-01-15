@@ -1,0 +1,20 @@
+#define LED 25 // led is connected to  gpio 25
+
+void setup() {
+  ledcAttachPin(LED, 0); // here assign a led to a channel,LED is a gpio 25 and 0 is a LED channel (0-15)
+  //channel 0-15 resolution 1-16bits freq limits depend on resolution
+  ledcSetup(0, 5000, 8);  // 0 is a led channel, 5k is PWM frequency, 8 is PWM resolution 8 bit
+}
+
+void loop() {
+
+ for (int i = 0; i<=255; i++)
+ {
+  ledcWrite(0, i);  // led brightenss will increasing
+  delay(10);
+ }
+ for (int i = 255; i>=0; i--)
+ {
+  ledcWrite(0, i);  // led brightenss will decreasing
+  delay(10); 
+ }
